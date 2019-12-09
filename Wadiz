@@ -1,0 +1,38 @@
+install.packages('RSelenium')
+install.packages('taskscheduleR')
+
+library('RSelenium')
+library('taskscheduleR')
+
+
+remDr <- remoteDriver(
+  remoteServerAddr = "localhost",
+  port = 4446L,
+  browserName = "chrome"
+)
+#웹 브라우저 실행
+remDr$open()
+
+#와디즈 펀딩 접속
+remDr$navigate("https://www.wadiz.kr/web/main")
+
+#와디즈 펀딩 실시간 급상승 검색어 자료 추출
+webElem <- remDr$findElement(using = "class name", "TabContainer_tabList__1TS8l")
+
+#검색어 자료 추출값 저장 장소 생성
+myscript <- "C:/Users/korea/Desktop/extdata/helloworld.R"
+
+#60분마다 R스케쥴러를 구동해 실시간 검색어 값 추출
+taskscheduler_create(taskname = "test", rscript = myscript,
+schedule = "MINUTE", startdate = format(Sys.Date(), "2019/12/09"), modifier = 60, starttime = '20:27')
+0
+#date를 뒤에 붙이면 csv파일안에 값이 적용된다
+write.csv(x, file=paste("C:/Users/korea/Desktop/extdata/20191209.csv"))
+
+# R스케쥴러 멈춤
+taskscheduler_delete(taskname = "test")
+
+
+
+
+
