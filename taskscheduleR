@@ -1,0 +1,24 @@
+install.packages('taskscheduleR')
+library('taskscheduleR')
+
+#검색어 자료 추출값 저장 장소 생성
+myscript <- "C:/Users/korea/Desktop/extdata/helloworld.R"
+
+#60분마다 R스케쥴러를 구동해 실시간 검색어 값 추출
+taskscheduler_create(taskname = "test", rscript = myscript,
+schedule = "MINUTE", startdate = format(Sys.Date(), "2019/12/09"), modifier = 60, starttime = '20:27')
+
+#date를 뒤에 붙이면 csv파일안에 값이 적용된다
+write.csv(x, file=paste("C:/Users/korea/Desktop/extdata/20191209.csv"))
+
+# R스케쥴러 멈춤
+taskscheduler_delete(taskname = "test")
+
+
+#date 설정
+date=gsub(pattern = "\\s", replacement = "", x= format(Sys.Date(), "%Y%m%d"))
+date=paste("C:/Users/korea/Desktop/extdata/", date)
+date=gsub(pattern = "\\s", replacement = "", x= date)
+date=paste(date , ".csv")
+date=gsub(pattern = "\\s", replacement = "", x= date)
+date
