@@ -26,7 +26,7 @@ percent3 <- gsub(',','',percent2);percent3
 percent4 <- percent3[5:8];percent4 #중복된 css값들로 인해 필요한 버튼만 순서맞춰 정리
 
 #실시간 랭킹 '리워드%' 1위~4위 데이터 추출값
-xdata <- percent4
+xdata <- as.numeric(percent4) #문자형 데이터 숫자로 변환하기
 
 
 
