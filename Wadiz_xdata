@@ -13,20 +13,19 @@ remDr$open()
 #와디즈 펀딩 메인 홈페이지 접속
 remDr$navigate("https://www.wadiz.kr/web/main")
 
-#실시간 랭킹 '투자'버튼 클릭
-button1 <- remDr$findElement(using = "class name", "TabButton_btnTab__K2OC3")
-button1$clickElement()
 
-#첫 화면 페이지 소스를 통해 데이터 추출하기
+#첫 화면 페이지 소스를 통해 '리워드' 실시간 랭킹 데이터 추출하기
 percenty <- remDr$getPageSource()[[1]] #첫 화면 페이지 소스 추출
 main <- read_html(percenty) #html 형식으로 불러오기
 mainfo=html_nodes(main,css='.commons_achievementRate__2J-KL') 
+
 #불러온 데이터 정제
 percent1 <- gsub('<span class="commons_achievementRate__2J-KL">','',mainfo);percent1
 percent2 <- gsub('%</span>','',percent1);percent2
 percent3 <- gsub(',','',percent2);percent3
 percent4 <- percent3[5:9];percent4 #중복된 css값들로 인해 필요한 버튼만 순서맞춰 정리
 
+#실시간 랭킹 '리워드' %값 1위~4위 데이터 추출값
 xdata <- percent4
 
 
