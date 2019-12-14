@@ -1,0 +1,24 @@
+library('RSelenium')
+library('rvest')
+
+remDr <- remoteDriver(
+  remoteServerAddr = "localhost",
+  port = 4446L,
+  browserName = "chrome"
+)
+#크롬 홈페이지 열기
+remDr$open()
+
+#와디즈 펀딩 메인 트렌드 주소
+remDr$navigate('https://www.wadiz.kr/web/main/trend')
+
+#화면 페이지 소스 복사 통해 데이터 추출
+percenty3 <- remDr$getPageSource()[[1]] #화면 데이터 소스 얻기 
+main3 <- read_html(percenty3) #html 형식으로 읽기
+mainfo3=html_nodes(main3,css='.commons_achievementRate__2J-KL') 
+
+#급상승 펀딩 (진행중인 펀딩 중 24시간 내 좋아요를 가장 많이 받은 프로젝트)
+percent111 <- gsub('<span class="commons_achievementRate__2J-KL">','',mainfo3[5:8]);percent11
+percent222 <- gsub('%</span>','',percent111);percent222
+zdata <- as.numeric(percent222)
+zdata
