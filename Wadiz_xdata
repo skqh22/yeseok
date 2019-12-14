@@ -27,7 +27,7 @@ percent2 <- gsub('%</span>','',percent1);percent2
 percent3 <- gsub(',','',percent2);percent3
 percent4 <- percent3[5:9];percent4 #중복된 css값들로 인해 필요한 버튼만 순서맞춰 정리
 
-x <- percent4
+xdata <- percent4
 
 
 
