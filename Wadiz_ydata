@@ -21,4 +21,6 @@ mainfo2=html_nodes(main2,css='.commons_achievementRate__2J-KL')
 percent11 <- gsub('<span class="commons_achievementRate__2J-KL">','',mainfo2[1:4]);percent11
 percent22 <- gsub('%</span>','',percent11);percent22
 ydata <- as.numeric(percent22)
+
+#급상승 펀딩 % 데이터 추출값
 ydata
