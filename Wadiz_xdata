@@ -23,7 +23,7 @@ mainfo=html_nodes(main,css='.commons_achievementRate__2J-KL')
 percent1 <- gsub('<span class="commons_achievementRate__2J-KL">','',mainfo);percent1
 percent2 <- gsub('%</span>','',percent1);percent2
 percent3 <- gsub(',','',percent2);percent3
-percent4 <- percent3[5:9];percent4 #중복된 css값들로 인해 필요한 버튼만 순서맞춰 정리
+percent4 <- percent3[5:8];percent4 #중복된 css값들로 인해 필요한 버튼만 순서맞춰 정리
 
 #실시간 랭킹 '리워드%' 1위~4위 데이터 추출값
 xdata <- percent4
