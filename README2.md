@@ -1,8 +1,8 @@
-#**와디즈 펀딩 사이트 리워드율(%) 분석**#
+# 와디즈 펀딩 리워드 랭킹 (%) 크롤링 및 분석
 
 
 
-##와디즈 펀딩 사이트의 실시간 리워드 랭킹, 급상승 펀딩 상승률 랭킹, 하루 중 가장 좋아요를 많이 받은 랭킹에 대해 크롤링하고 분석했습니다
+###와디즈 펀딩 사이트의 실시간 리워드 랭킹, 급상승 펀딩 상승률 랭킹, 하루 중 가장 좋아요를 많이 받은 랭킹에 대해 크롤링하고 분석했습니다
 
 ```
 install.packages('rvest')
@@ -10,7 +10,7 @@ install.packages('RSelenium')
 library('rvest')
 library('RSelenium')
 ```
-##->필요한 패키지 'rvest','RSelenium'을 불러왔습니다
+###->필요한 패키지 'rvest','RSelenium'을 불러왔습니다
 
 ```
 remDr <- remoteDriver(
@@ -21,7 +21,7 @@ remDr$open()
 remDr$navigate("https://www.wadiz.kr/web/main")
 remDr$navigate('https://www.wadiz.kr/web/main/trend') 
 ```
-##->한 사이트 url을 불러왔습니다
+###->한 사이트 url을 불러왔습니다
 
 ![와디즈 펀딩 메인](https://user-images.githubusercontent.com/58077375/70862277-8d498480-1f7d-11ea-8a8d-f28705c4801e.PNG)
 
@@ -38,7 +38,7 @@ xdata
 ```
 ![실시간 랭킹](https://user-images.githubusercontent.com/58077375/70862295-dbf71e80-1f7d-11ea-9e88-9cd147c1f9a8.PNG)
 
-##-> 홈페이지 실시간 리워드 랭킹 1위~4위를 크롤링 해왔습니다
+###-> 홈페이지 실시간 리워드 랭킹 1위~4위를 크롤링 해왔습니다
 remDr$getPageSource를 사용해 페이지 소스 첫 화면을 모두 불러옵니다
 이 소스를 read_html로 읽은 후 css 분을 크롤링 합니다
 불필요한 부분을 gsub로 정제하고 xdata에 넣습니다.
@@ -57,7 +57,7 @@ ydata
 ```
 ![급상승 펀딩](https://user-images.githubusercontent.com/58077375/70862314-27113180-1f7e-11ea-9c0b-792ba659c3bb.PNG) 
 
-##-> 홈페이지/트렌드 페이지에서 일정 기간동안 펀딩 상승률 1~4위를 크롤링 했습니다
+###-> 홈페이지/트렌드 페이지에서 일정 기간동안 펀딩 상승률 1~4위를 크롤링 했습니다
 remDr$getPageSource를 사용해 페이지 소스 첫 화면을 모두 불러옵니다
 이 소스를 read_html로 읽은 후 css 분을 크롤링 합니다
 불필요한 부분을 gsub로 정제하고 data에 넣습니다.
@@ -74,7 +74,7 @@ zdata
 ```
 ![좋아요 펀딩](https://user-images.githubusercontent.com/58077375/70862316-30020300-1f7e-11ea-9efc-c94a8240c113.PNG)
 
-##-> ydata와 같이 트렌드 페이지에서 오늘 하루 좋아요를 가장 많이 받은 펀딩 1~4위를 크롤링 했습니다
+###-> ydata와 같이 트렌드 페이지에서 오늘 하루 좋아요를 가장 많이 받은 펀딩 1~4위를 크롤링 했습니다
 remDr$getPageSource를 사용해 페이지 소스 첫 화면을 모두 불러옵니다
 이 소스를 read_html로 읽은 후 css 분을 크롤링 합니다
 불필요한 부분을 gsub로 정제하고 zata에 넣습니다.
@@ -114,6 +114,6 @@ zdata121520 <- c(1754,8090,0,31)
 total3 <- c(zdata121410,zdata121411,zdata121412,zdata121501,
             zdata121517,zdata121518,zdata121519,zdata121520)
 ```
-##->xdata,ydata,zdata 자료들을 total1,total2,total3에 시간별로 %값을 수집했다
+###->xdata,ydata,zdata 자료들을 total1,total2,total3에 시간별로 %값을 수집했다
 
  ```![plot total2](https://user-images.githubusercontent.com/58077375/70861937-558c0e00-1f78-11ea-9fb1-2f6a913668be.PNG) ```
