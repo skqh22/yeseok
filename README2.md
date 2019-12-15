@@ -20,7 +20,7 @@ remDr$open()
 remDr$navigate("https://www.wadiz.kr/web/main")
 remDr$navigate('https://www.wadiz.kr/web/main/trend') 
 ```
-### ->한 사이트 url을 불러왔습니다
+### ->메인 홈페이지 url을 불러왔습니다
 
 ![와디즈 펀딩 메인](https://user-images.githubusercontent.com/58077375/70862277-8d498480-1f7d-11ea-8a8d-f28705c4801e.PNG)
 
@@ -113,6 +113,6 @@ zdata121520 <- c(1754,8090,0,31)
 total3 <- c(zdata121410,zdata121411,zdata121412,zdata121501,
             zdata121517,zdata121518,zdata121519,zdata121520)
 ```
-### ->xdata,ydata,zdata 자료들을 total1,total2,total3에 시간별로 %값을 수집했다
+### ->xdata,ydata,zdata 자료들을 total1,total2,total3에 시간별로 %값을 수집했습니다
 
  ```![plot total2](https://user-images.githubusercontent.com/58077375/70861937-558c0e00-1f78-11ea-9fb1-2f6a913668be.PNG) ```
