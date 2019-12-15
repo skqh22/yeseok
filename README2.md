@@ -40,7 +40,7 @@ xdata
 ### -> 홈페이지 실시간 리워드 랭킹 1위~4위를 크롤링 해왔습니다
 ### remDr$getPageSource를 사용해 페이지 소스 첫 화면을 모두 불러옵니다
 ### 이 소스를 read_html로 읽은 후 css 분을 크롤링 합니다
-### 불필요한 부분을 gsub로 정제하고 xdata에 넣습니다.
+### 불필요한 부분을 gsub로 정제하고 xdata에 넣습니다
 
 
 ```
@@ -59,7 +59,7 @@ ydata
 ### -> 홈페이지/트렌드 페이지에서 일정 기간동안 펀딩 상승률 1~4위를 크롤링 했습니다
 ### remDr$getPageSource를 사용해 페이지 소스 첫 화면을 모두 불러옵니다
 ### 이 소스를 read_html로 읽은 후 css 분을 크롤링 합니다
-### 불필요한 부분을 gsub로 정제하고 data에 넣습니다.
+### 불필요한 부분을 gsub로 정제하고 data에 넣습니다
 
 
 ```
@@ -115,4 +115,12 @@ total3 <- c(zdata121410,zdata121411,zdata121412,zdata121501,
 ```
 ### ->xdata,ydata,zdata 자료들을 total1,total2,total3에 시간별로 %값을 수집했습니다
 
- ```![plot total2](https://user-images.githubusercontent.com/58077375/70861937-558c0e00-1f78-11ea-9fb1-2f6a913668be.PNG) ```
+``` 
+par(mfrow=c(1,3))
+plot(total1,xlab='시간',ylab='리워드%')
+plot(total2,xlab='시간',ylab='리워드%')
+plot(total3,xlab='시간',ylab='리워드%')
+```
+![plot total2](https://user-images.githubusercontent.com/58077375/70861937-558c0e00-1f78-11ea-9fb1-2f6a913668be.PNG)
+
+### -> 시간별 실시간 랭킹, 급상승 랭킹, 좋아요 순 랭킹의 리워드(%) 추이를 산점도로 분석해 보았습니다
