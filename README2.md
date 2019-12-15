@@ -56,6 +56,7 @@ ydata <- as.numeric(percent22)
 ydata
 ```
 ![급상승 펀딩](https://user-images.githubusercontent.com/58077375/70862314-27113180-1f7e-11ea-9c0b-792ba659c3bb.PNG) 
+
 -> 홈페이지/트렌드 페이지에서 일정 기간동안 펀딩 상승률 1~4위를 크롤링 했습니다
 remDr$getPageSource를 사용해 페이지 소스 첫 화면을 모두 불러옵니다
 이 소스를 read_html로 읽은 후 css 분을 크롤링 합니다
@@ -72,13 +73,47 @@ zdata <- as.numeric(percent222)
 zdata 
 ```
 ![좋아요 펀딩](https://user-images.githubusercontent.com/58077375/70862316-30020300-1f7e-11ea-9efc-c94a8240c113.PNG)
+
 -> ydata와 같이 트렌드 페이지에서 오늘 하루 좋아요를 가장 많이 받은 펀딩 1~4위를 크롤링 했습니다
 remDr$getPageSource를 사용해 페이지 소스 첫 화면을 모두 불러옵니다
 이 소스를 read_html로 읽은 후 css 분을 크롤링 합니다
 불필요한 부분을 gsub로 정제하고 zata에 넣습니다.
 
+```
+xdata121410 <- c(3567,8057,394,380)
+xdata121411 <- c(3567,8099,398,377)
+xdata121412 <- c(3592,8117,397,381)
+xdata121501 <- c(3640,8195,382,237)
+xdata121517 <- c(8846,3986,1758,389)
+xdata121518 <- c(8878,1817,3996,389)
+xdata121519 <- c(1865,8917,4011,390)
+xdata121520 <- c(1982,8959,4029,390)
+total1 <- c(xdata121410,xdata121411,xdata121412,xdata121501,xdata121517,
+            xdata121518,xdata121519,xdata121520)
+
+ydata121410 <- c(10731,27419,117,750)
+ydata121411 <- c(10746,27562,117,750)
+ydata121412 <- c(10774,27630,117,750)
+ydata121501 <- c(10799,27639,117,750)
+ydata121517 <- c(10897,28148,117,758)
+ydata121518 <- c(10897,28151,117,760)
+ydata121519 <- c(10913,28183,117,760)
+ydata121520 <- c(10928,28268,117,760)
+total2 <- c(ydata121410,ydata121411,ydata121412,
+            ydata121501,ydata121517,ydata121518,ydata121519,ydata121520)
 
 
+zdata121410 <- c(1440,1153,16,17)
+zdata121411 <- c(1422,2484,750,44)
+zdata121412 <- c(381,397,16,84)
+zdata121501 <- c(3640,3106,16,42)
+zdata121517 <- c(300,28148,55,44)
+zdata121518 <- c(389,432,0,55)
+zdata121519 <- c(1754,8090,0,31)
+zdata121520 <- c(1754,8090,0,31)
+total3 <- c(zdata121410,zdata121411,zdata121412,zdata121501,
+            zdata121517,zdata121518,zdata121519,zdata121520)
+```
 
 
  ```![plot total2](https://user-images.githubusercontent.com/58077375/70861937-558c0e00-1f78-11ea-9fb1-2f6a913668be.PNG) ```
