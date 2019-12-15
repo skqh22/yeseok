@@ -4,11 +4,11 @@
 
 와디즈 펀딩 사이트의 실시간 리워드 랭킹, 급상승 펀딩 상승률 랭킹, 하루 중 가장 좋아요를 많이 받은 랭킹에 대해 크롤링하고 분석했습니다
 
-![패키지](https://user-images.githubusercontent.com/58077375/70862046-3aba9900-1f7a-11ea-90a7-1515b45d41fa.PNG)
+ ```![패키지](https://user-images.githubusercontent.com/58077375/70862046-3aba9900-1f7a-11ea-90a7-1515b45d41fa.PNG) ```
 
 ->필요한 패키지 'rvest','RSelenium'을 불러왔습니다
 
-![url 불러오기](https://user-images.githubusercontent.com/58077375/70862088-ea900680-1f7a-11ea-8f5d-cec06c3e6f6d.PNG)
+ ```![url 불러오기](https://user-images.githubusercontent.com/58077375/70862088-ea900680-1f7a-11ea-8f5d-cec06c3e6f6d.PNG) ```
 
 ->한 사이트 url을 불러왔습니다
 ![와디즈 펀딩 메인](https://user-images.githubusercontent.com/58077375/70862277-8d498480-1f7d-11ea-8a8d-f28705c4801e.PNG)
